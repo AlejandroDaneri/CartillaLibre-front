@@ -3,6 +3,10 @@ node_js:
 - 14
 install:
 - npm install
+
+script:
+- npm run build
+
 deploy:
   provider: heroku
   api_key:
