@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import {LoginWrapper} from "../styles/LoginWrapper";
 
 const Login = () => {
 
@@ -8,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState()
 
   return (
-    <div>
+    <LoginWrapper>
       <h2>Login</h2>
       <input
         name='username'
@@ -31,7 +32,7 @@ const Login = () => {
           Ingresar
         </Button>
       </Link>
-    </div>
+    </LoginWrapper>
   );
 }
 
