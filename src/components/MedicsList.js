@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import CircleLoader from 'react-spinners/CircleLoader'
 import axios from 'axios'
 import Rating from '@material-ui/lab/Rating';
 import {Link, Table, TableBody, TableCell, TableHead, TableRow} from "@material-ui/core";
 import {MedicListWrapper} from "../styles/MedicListWrapper";
+import {ClipLoader} from "react-spinners";
 
 
 function getVideos() {
@@ -67,7 +67,7 @@ const  MedicList = () => {
         </Table>
       ) : (
         <div className="loader">
-          <CircleLoader color={'green'} size={250}/>
+          <ClipLoader color={'green'} size={200}/>
         </div>
       )}
     </MedicListWrapper>
