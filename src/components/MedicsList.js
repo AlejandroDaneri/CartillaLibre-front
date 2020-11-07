@@ -53,6 +53,7 @@ const  MedicList = () => {
                         name="simple-controlled"
                         value={arrAvg(medic.rating)}
                         onChange={(event, newValue) => {
+                          console.log(value)
                           setValue(newValue);
                         }}
                       />
