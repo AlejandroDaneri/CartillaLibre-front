@@ -6,17 +6,18 @@ import {MedicListWrapper} from "../styles/MedicListWrapper";
 import {ClipLoader} from "react-spinners";
 
 
-function getVideos() {
+function getMedics() {
   return axios.get('https://cors-anywhere.herokuapp.com/https://cartillalibre-back.herokuapp.com/medics')
 }
+
+const arrAvg = array => array.reduce((a, b) => a + b,0) / array.length;
 
 const  MedicList = () => {
 
   const [medics, setMedics] = useState()
   const [value, setValue] = useState(3)
-
   useEffect(() => {
-    getVideos().then(response => {
+    getMedics().then(response => {
       setMedics(response.data)
     })
   }, [])
@@ -50,14 +51,16 @@ const  MedicList = () => {
                     <TableCell>
                       <Rating
                         name="simple-controlled"
-                        value={value}
+                        value={arrAvg(medic.rating)}
                         onChange={(event, newValue) => {
                           setValue(newValue);
                         }}
                       />
                     </TableCell>
                     <TableCell>
-                      <Link>Ver comentario</Link>
+                      <Link>
+                        Comentarios
+                      </Link>
                     </TableCell>
                   </TableRow>
                 )
